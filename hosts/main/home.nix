@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -11,6 +11,7 @@
     ../../modules/home/xdg.nix
     ../../modules/home/programs/programs.nix
     ../../modules/home/hyprland.nix
+    ../../modules/home/nixvim.nix
   ];
 
   programs.home-manager.enable = true;
