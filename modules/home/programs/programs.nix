@@ -17,7 +17,7 @@
     enableCompletion = true;
     dotDir = ".config/zsh";
     initExtra = ''
-      PS1="[%n@%m %~ ]  "
+      PS1="[%n@%m %~ ]  "
     '';
   };
 

@@ -49,12 +49,10 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
-
   environment.systemPackages = with pkgs; [
     git
     neovim
   ];
-
   programs.zsh.enable = true;
   programs.hyprland = {
     enable = true;

@@ -10,6 +10,7 @@
     ../../modules/home/packages.nix
     ../../modules/home/xdg.nix
     ../../modules/home/programs/programs.nix
+    ../../modules/home/hyprland.nix
   ];
 
   programs.home-manager.enable = true;
