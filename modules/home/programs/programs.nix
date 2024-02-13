@@ -28,6 +28,7 @@
       background = "#000000";
       foreground = "#ffffff";
       background_opacity = "0.8";
+      window_padding_width = 5;
     };
     shellIntegration.enableZshIntegration = true;
   };

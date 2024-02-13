@@ -4,6 +4,12 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      general = {
+        "col.inactive_border" = "rgba(aaaaaaff)";
+	"col.active_border" = "rgba(aaaaaaff)";
+	gaps_in = 5;
+	gaps_out = 10;
+      };
       decoration = {
         drop_shadow = false;
 	blur = {

@@ -11,7 +11,6 @@
     dunst
     grim
     slurp
-    cliphist
 
     # Fonts
     noto-fonts
