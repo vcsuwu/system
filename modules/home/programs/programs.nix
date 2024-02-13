@@ -21,10 +21,17 @@
     '';
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.kitty = {
     enable = true;
     font.name = "JetBrainsMono Nerd Font Mono";
     settings = {
+      cursor = "#ffffff";
       background = "#000000";
       foreground = "#ffffff";
       background_opacity = "0.8";
