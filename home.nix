@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
+  imports = [
+    inputs.nur.nixosModules.nur
+  ];
+
   home.username = "vocus"; home.homeDirectory = "/home/vocus";
   home.stateVersion = "23.11";
   home.packages = with pkgs; [
@@ -89,7 +93,8 @@
     profiles.main = {
       isDefault = true;
       name = "vocus";
-      extensions = [
+      extensions = with config.nur.repos.rycee.firefox-addons; [
+        ublock-origin
       ];
       search = {
         default = "DuckDuckGo";
@@ -114,6 +119,9 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun";
+      exec-once = [
+        "firefox"
+      ];
       bind = [
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -132,8 +140,8 @@
 	"$mod, Return, exec, $terminal"
       ];
       general = {
-        gaps_in = 0;
-	gaps_out = 0;
+        gaps_in = 10;
+	gaps_out = 20;
       };
       input = {
         kb_layout = "us,ru";
