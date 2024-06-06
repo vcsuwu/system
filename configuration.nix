@@ -38,6 +38,9 @@
     };
   };
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "vocus" ];
+
   hardware.opengl = {
     enable = true;
     driSupport = true;

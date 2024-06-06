@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     firefox
     keepassxc
+    nekoray
     vesktop
     hyprpaper
     kitty
