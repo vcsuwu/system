@@ -1,15 +1,16 @@
 { config, pkgs, inputs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-# Bootloader.
+  [
+    ./hardware-configuration.nix
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "core"; # Define your hostname.
   networking.networkmanager.enable = true;
+
   time.timeZone = "Asia/Yekaterinburg";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -23,6 +24,7 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
   users.users.vocus = {
     isNormalUser = true;
     description = "vocus";
@@ -41,14 +43,6 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "vocus" ];
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver.videoDrivers = ["amdgpu"];
-
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -60,15 +54,18 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
   environment.systemPackages = with pkgs; [
     neovim
     git
   ];
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-  programs.zsh.enable = true;
-  system.stateVersion = "23.11"; # Did you read the comment?
 
+  programs.zsh.enable = true;
+
+  system.stateVersion = "23.11";
 }

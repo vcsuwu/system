@@ -9,21 +9,18 @@
   home.packages = with pkgs; [
     firefox
     keepassxc
-    nekoray
-    vesktop
-    hyprpaper
     kitty
     rofi-wayland
-    telegram-desktop
     xdg-utils
     noto-fonts
     noto-fonts-emoji
-    noto-fonts-cjk
     (nerdfonts.override { fonts = [ "JetBrainsMono" "IosevkaTerm" ]; })
   ];
+
   home.sessionVariables = {
     NIXOS_OZONE_WL=1;
   };
+
   xdg = {
     enable = true;
     portal = {
@@ -37,14 +34,14 @@
     userDirs = {
       enable = true;
       createDirectories = true;
-      desktop = "${config.home.homeDirectory}/other/desktop";
-      publicShare = "${config.home.homeDirectory}/other/public";
-      templates = "${config.home.homeDirectory}/other/templates";
-      documents = "${config.home.homeDirectory}/docs";
-      download = "${config.home.homeDirectory}/installs";
-      music = "${config.home.homeDirectory}/media/music";
-      pictures = "${config.home.homeDirectory}/media/pics";
-      videos = "${config.home.homeDirectory}/media/vids";
+      desktop = "${config.home.homeDirectory}/desktop";
+      publicShare = "${config.home.homeDirectory}/public";
+      templates = "${config.home.homeDirectory}/template";
+      documents = "${config.home.homeDirectory}/document";
+      download = "${config.home.homeDirectory}/install";
+      music = "${config.home.homeDirectory}/music";
+      pictures = "${config.home.homeDirectory}/image";
+      videos = "${config.home.homeDirectory}/video";
     }; 
   };
 
@@ -161,5 +158,4 @@
   };
 
   programs.home-manager.enable = true;
-
 }
